@@ -1,0 +1,186 @@
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #4ECDC4;
+    --background-color: #0a192f;
+    --text-color: #ffffff;
+    --input-background: rgba(255, 255, 255, 0.1);
+    --button-color: #4ade80;
+    --card-background: #1a2942;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.app-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+}
+
+.title {
+    font-family: 'Carter One', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+.question-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.question {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.question h2 {
+    font-size: 1rem;
+    color: var(--text-color);
+    font-weight: normal;
+}
+
+.input-field {
+    padding: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--input-background);
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.input-field::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.action-button {
+    background-color: var(--button-color);
+    color: var(--background-color);
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.action-button:hover {
+    opacity: 0.9;
+}
+
+.action-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Recommendations Styling */
+.recommendations {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.movie-card {
+    background: var(--card-background);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.movie-header h3 {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.description {
+    color: rgba(255, 255, 255, 0.8);
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.movie-meta {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.movie-meta span {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+}
+
+.similarity {
+    margin-top: 1rem;
+    text-align: right;
+    font-size: 0.9rem;
+    color: var(--button-color);
+}
+
+.error-message {
+    background-color: #ff5252;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
