@@ -1,6 +1,6 @@
 # PopChoice 🍿
 
-PopChoice is an AI-powered movie recommendation app that uses OpenAI's embeddings and Supabase's vector database to provide personalized movie suggestions based on your preferences.
+PopChoice is an AI-powered movie recommendation app that uses OpenAI's embeddings and Supabase's vector database to provide personalized movie suggestions based on your preferences. Built with React and styled-components for a modern, maintainable codebase.
 
 ## Features
 
@@ -9,14 +9,16 @@ PopChoice is an AI-powered movie recommendation app that uses OpenAI's embedding
 - 🎯 Personalized suggestions considering era and mood preferences
 - 💾 Vector database storage using Supabase
 - 🎨 Modern, responsive UI with dark theme
+- ⚛️ Built with React and styled-components
+- 🔄 Component-based architecture for better maintainability
 
 ## Tech Stack
 
-- Frontend: Vanilla JavaScript with Vite
+- Frontend: React with Vite
+- Styling: styled-components for CSS-in-JS
 - AI: OpenAI API for embeddings
 - Database: Supabase with pgvector
-- Styling: Custom CSS with CSS Variables
-- Dependencies: LangChain for text processing
+- Build Tool: Vite for fast development and optimized builds
 
 ## Setup
 
@@ -95,15 +97,22 @@ npm run dev
 
 ```
 PopChoice/
-├── index.html           # Main HTML file
-├── index.js            # Main JavaScript file
-├── index.css           # Styles
-├── config.js           # API configurations
-├── movies.txt          # Movie database
-├── utils/
-│   └── embeddings.js   # Embedding creation and querying
-└── images/
-    └── popcorn.png     # App logo
+├── src/                          # Source directory
+│   ├── main.jsx                 # Entry point
+│   ├── App.jsx                  # Main App component
+│   ├── config.js                # API configurations
+│   ├── components/              # React components
+│   │   ├── MovieForm.jsx        # Movie input form
+│   │   └── Recommendation.jsx   # Movie recommendation display
+│   └── utils/
+│       └── embeddings.js        # Embedding creation and querying
+├── public/
+│   └── images/
+│       └── popcorn.png          # App logo
+├── index.html                   # HTML entry point
+├── movies.txt                   # Movie database
+├── vite.config.js              # Vite configuration
+└── package.json                # Dependencies and scripts
 ```
 
 ## Development
@@ -111,6 +120,15 @@ PopChoice/
 - `npm run dev`: Start development server
 - `npm run build`: Build for production
 - `npm run preview`: Preview production build
+
+## Component Architecture
+
+The app is built with a component-based architecture using React:
+
+- `App.jsx`: Main container component that manages state and data flow
+- `MovieForm.jsx`: Handles user input with controlled form components
+- `Recommendation.jsx`: Displays movie recommendations with animations
+- Styled components are used throughout for consistent styling and theming
 
 ## Contributing
 
@@ -128,4 +146,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - OpenAI for providing the embeddings API
 - Supabase for the vector database functionality
+- React and styled-components teams
 - The amazing open-source community
