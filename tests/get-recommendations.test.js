@@ -1,4 +1,4 @@
-import { handler } from './get-recommendations.js';
+import { handler } from '../netlify/functions/get-recommendations.js';
 
 // Test event object
 const mockEvent = {
