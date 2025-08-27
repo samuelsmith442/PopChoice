@@ -10,12 +10,35 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html {
+    /* Prevent horizontal scroll on mobile */
+    overflow-x: hidden;
+  }
+
   body {
     margin: 0;
     font-family: 'Roboto Slab', serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #000C36;  /* Updated to exact color */
+    background: #000C36;
+    overflow-x: hidden;
+
+    /* Mobile-specific improvements */
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    touch-action: manipulation;
+  }
+
+  /* Improve touch targets on mobile */
+  button, input, select, textarea {
+    touch-action: manipulation;
+  }
+
+  /* Prevent zoom on input focus for iOS */
+  @media (max-width: 480px) {
+    input, textarea, select {
+      font-size: 16px !important;
+    }
   }
 `
 
