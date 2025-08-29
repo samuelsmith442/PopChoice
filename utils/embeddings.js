@@ -38,7 +38,22 @@ export async function querySimilarContent(query) {
 
 export async function createAndStoreEmbeddings() {
     try {
-        console.log('Reading movies.txt...');
+        console.log('🗑️ Clearing existing embeddings...');
+
+        // Clear existing embeddings to avoid duplicates
+        const { error: deleteError } = await supabase
+            .from('popchoice_embeddings')
+            .delete()
+            .neq('id', 0); // Delete all rows
+
+        if (deleteError) {
+            console.error('Error clearing embeddings:', deleteError);
+            throw deleteError;
+        }
+
+        console.log('✅ Cleared existing embeddings');
+        console.log('📖 Reading movies.txt...');
+
         const moviesData = fs.readFileSync('movies.txt', 'utf8');
         const movies = moviesData.split('\n\n').filter(movie => movie.trim());
 
